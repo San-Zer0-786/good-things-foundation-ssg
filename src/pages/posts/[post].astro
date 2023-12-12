@@ -5,6 +5,8 @@ import EngagementBlock from '../../components/EngagementBlock.astro'
 import FeaturedPosts from '../../components/FeaturedPosts.astro'
 import PostContent from '../../components/PostContent.astro'
 import Header from '../../components/Header.astro'
+import posts from '../../data/posts'
+import Layout from '../../layouts/Layout.astro';
 
 import '../../assets/css/global.css';
 
@@ -26,30 +28,26 @@ export function getStaticPaths() {
 const { post } = Astro.params;
 
 ---
-<Header/>
-<main class="section">
-  <Banner
-    bgImage="/banner-bg-image.png"
-    title="Get online week 2021"
-    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    buttonText="Get Involved Now!"
-  />
-  <PostContent
-     postTitle={post}
-     postContent={postContent}
-  />
-  <FeaturedPosts
-    title="What do we do?"
-    subtitle="You might not have heard of us, but we're the people behind the following impactful programmes"
-    posts={[
-      { id: 1, title: 'Get online week', excerpt: 'Lorem ipsum dolor sit amet', url: 'get-online-week'},
-      { id: 2, title: 'Learn my way', excerpt: 'Lorem ipsum dolor sit amet', url: 'learn-my-way' },
-      { id: 3, title: 'Make it click', excerpt: 'Lorem ipsum dolor sit amet', url: 'make-it-click' },
-      { id: 4, title: 'Digital you', excerpt: 'Lorem ipsum dolor sit amet', url: 'digital-you' },
-    ]}
-    buttonText="More about what we do"
-  />
-</main>
+<Layout title="Good Things Foundation - Astro Build Blog">
+  <main class="section">
+    <Banner
+      bgImage="/banner-bg-image.png"
+      title="Get online week 2021"
+      content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      buttonText="Get Involved Now!"
+    />
+    <PostContent
+      postTitle={post}
+      postContent={postContent}
+    />
+    <FeaturedPosts
+      title="What do we do?"
+      subtitle="You might not have heard of us, but we're the people behind the following impactful programmes"
+      posts={posts}
+      buttonText="More about what we do"
+    />
+  </main>
+</Layout>
 
 <style>
  @media only screen and (max-width: 620px) {
