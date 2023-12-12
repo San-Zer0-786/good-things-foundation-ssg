@@ -1,0 +1,35 @@
+---
+interface Props {
+  bgImage: string;
+  title: string;
+  content: string;
+  buttonText: string;
+}
+
+const { bgImage, title, content, buttonText } = Astro.props;
+---
+
+<div>
+  <!-- Background Image -->
+  <section class="banner-bg" style=`background-image: url(${bgImage});`>
+    <div class="banner section section-padding">
+      <!-- Content: Title, Content, and Button -->
+      <div class="banner-content container">
+        <h1>{title}</h1>
+        <p>{content}</p>
+        <button class="red">{buttonText}</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<style scoped>
+@import '../assets/css/banner.css';
+/* .banner-bg {
+  background-image: url(bgImage);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+} */
+</style>

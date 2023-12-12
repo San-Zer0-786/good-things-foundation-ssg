@@ -1,0 +1,40 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  fixedText: string;
+  dropdownOptions1: Array<{ label: string, value: string }>;
+  dropdownOptions2: Array<{ label: string, value: string }>;
+  buttonText: string;
+}
+
+const { title, subtitle, dropdownOptions1, dropdownOptions2, buttonText } = Astro.props;
+---
+
+<section class="engagement-block section section-padding">
+  <div class="container">
+    <h2>{title}</h2>
+    <h3>{subtitle}</h3>
+    <div class="engagement-block__cta">
+      <p>
+        I am
+        <select>
+          {dropdownOptions1.map(option => (
+            <option value={option.value}>{option.label}</option>
+          ))}
+        </select>
+        and I
+        <select>
+          {dropdownOptions2.map(option => (
+            <option value={option.value}>{option.label}</option>
+          ))}
+        </select>
+      </p>
+      <button class="red-bg">{buttonText}</button>
+    </div>
+  </div>
+</section>
+
+<style scoped>
+  @import '../assets/css/engagementBlock.css';
+</style>

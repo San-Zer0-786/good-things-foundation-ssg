@@ -1,0 +1,32 @@
+---
+interface Props {
+  columnImage: string;
+  columnTitle: string;
+  columnContent: string;
+  buttonText: string;
+}
+
+const { columnImage, columnTitle, columnContent, buttonText } = Astro.props;
+---
+
+<section class="two-column section">
+  <div class="column-left column section-padding">
+    <img src={columnImage} alt="Column Image" class="column-image" />
+  </div>
+  <div class="column-right column section-padding container">
+    <div class="content">
+      <h2>{columnTitle}</h2>
+      <p>{columnContent}</p>
+      <button class="green mt-24">{buttonText}</button>
+    </div>
+    <img src="public/good-things-foundation-icon.svg" class="icon"/>
+  </div>
+</section>
+
+<style scoped>
+/* Styles for the TwoColumn component */
+@import '../assets/css/twoColumns.css';
+.column-image {
+  background-image: url({columnImage});
+}
+</style>
