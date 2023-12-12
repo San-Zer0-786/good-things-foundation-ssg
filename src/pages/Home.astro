@@ -3,6 +3,7 @@ import Banner from '../components/Banner.astro'
 import TwoColumns from '../components/TwoColumns.astro'
 import EngagementBlock from '../components/EngagementBlock.astro'
 import FeaturedPosts from '../components/FeaturedPosts.astro'
+import CatFact from '../components/CatFact.astro';
 
 const dropdownOptions1 = [
   { label: 'an Individual', value: 'individual' },
@@ -26,14 +27,14 @@ const posts = [
 
 <main class="section">
   <Banner 
-    bgImage="public/banner-bg-image.png"
+    bgImage="banner-bg-image.png"
     title="Get online week 2021"
     content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     buttonText="Get Involved Now!"
   />
   
   <TwoColumns 
-    columnImage="public/column-bg-image.jpg"
+    columnImage="column-bg-image.jpg"
     columnTitle="We are a social change charity, helping people to improve their lives through digital."
     columnContent="We tackle the most pressing issues of our time, working with partners in thousands of communities across the UK and further afield"
     buttonText="Learn more about us"
@@ -53,6 +54,7 @@ const posts = [
     subtitle="You might not have heard of us, but we're the people behind the following impactful programmes"
     posts={posts}
     buttonText="More about what we do"
-    client:load
   />
+
+  <CatFact/>
 </main>
