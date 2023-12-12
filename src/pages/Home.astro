@@ -2,6 +2,7 @@
 import Banner from '../components/Banner.astro'
 import TwoColumns from '../components/TwoColumns.astro'
 import EngagementBlock from '../components/EngagementBlock.astro'
+import FeaturedPosts from '../components/FeaturedPosts.astro'
 
 const dropdownOptions1 = [
   { label: 'an Individual', value: 'individual' },
@@ -47,5 +48,10 @@ const posts = [
     buttonText="Start now"
   />
 
- 
+  <FeaturedPosts 
+    title="What do we do?"
+    subtitle="You might not have heard of us, but we're the people behind the following impactful programmes"
+    posts={posts}
+    buttonText="More about what we do"
+  />
 </main>
