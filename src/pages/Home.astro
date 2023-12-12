@@ -3,6 +3,7 @@ import Banner from '../components/Banner.astro'
 import TwoColumns from '../components/TwoColumns.astro'
 import EngagementBlock from '../components/EngagementBlock.astro'
 import FeaturedPosts from '../components/FeaturedPosts.astro'
+import CatFact from '../components/CatFact.astro';
 
 const dropdownOptions1 = [
   { label: 'an Individual', value: 'individual' },
@@ -54,4 +55,6 @@ const posts = [
     posts={posts}
     buttonText="More about what we do"
   />
+
+  <CatFact/>
 </main>

@@ -8,8 +8,6 @@ import Header from '../../components/Header.astro'
 import posts from '../../data/posts'
 import Layout from '../../layouts/Layout.astro';
 
-import '../../assets/css/global.css';
-
 interface PostProps {
   postTitle: string;
   postContent: string;
@@ -49,22 +47,12 @@ const { post } = Astro.params;
   </main>
 </Layout>
 
-<style>
- @media only screen and (max-width: 620px) {
-    .post-content h2 {
-        font-size: 1.5em;
-    }
-    .post-content p {
-        font-size: 17px;
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .post-content h2 {
-        font-size: 1.5em;
-    }
-    .post-content p {
-        font-size: 14px;
-    }
-}
+<style scoped>
+  @import '../../assets/css/post.css';
+  /* .banner-bg {
+    background-image: url(bgImage);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  } */
 </style>
